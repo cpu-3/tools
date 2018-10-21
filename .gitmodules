@@ -1,0 +1,9 @@
+[submodule "asm"]
+	path = asm
+	url = git@github.com:cpu-3/asm.git
+[submodule "compiler"]
+	path = compiler
+	url = git@github.com:cpu-3/compiler.git
+[submodule "simu"]
+	path = simu
+	url = git@github.com:cpu-3/simu.git
