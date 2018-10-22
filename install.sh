@@ -2,8 +2,8 @@
 #git submodule foreach git pull origin master
 
 CUR=`pwd`
-mkdir -p bin
 BIN=$CUR/bin
+mkdir -p $BIN
 mkdir -p $BIN/asm-lib
 mkdir -p $BIN/compiler
 
