@@ -1,4 +1,7 @@
 #!/bin/sh
+
+set -eu
+
 git submodule update --init --recursive
 git submodule foreach git pull origin master
 
@@ -17,3 +20,7 @@ cp mcamlc $BIN
 cp asm.sh $BIN/asm
 cp -r compiler $BIN/compiler
 cp -r asm $BIN/asm-lib
+
+
+echo "\n\nInstal succeeded."
+echo Please add `pwd`/bin to your PATH
