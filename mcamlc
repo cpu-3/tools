@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -eu
+
+CUR=`pwd`
+# move sandbox folder
+SANDBOX=/tmp/mcamlc
+BASENAME=`basename $1`
+SRC=$BASENAME.ml
+DST=$BASENAME.s
+MLFILE=$SANDBOX/$SRC
+SFILE=$SANDBOX/$DST
+mkdir -p $SANDBOX
+
+cp $1.ml $MLFILE
+cd $SANDBOX
+min-caml $BASENAME
+echo cp $DST $CUR/$DST
+cp $DST $CUR/$DST
+
+# move back to the cur folder
+cd $CUR
+
+shift
+asm $CUR/$DST $@
