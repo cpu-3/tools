@@ -10,11 +10,13 @@ BIN=$CUR/bin
 mkdir -p $BIN
 mkdir -p $BIN/asm-lib
 mkdir -p $BIN/compiler
+mkdir -p $BIN/_simu
 
 make -C simu
 make -C compiler
 
-mv simu/simu $BIN
+cp simu.sh $BIN/simu
+cp -r simu/ $BIN/_simu
 mv compiler/min-caml $BIN
 cp mcamlc $BIN
 cp asm.sh $BIN/asm

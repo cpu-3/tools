@@ -5,7 +5,7 @@ y = 400
 
 with open(filename) as f:
     cnt = 0
-    for line in f.readlines():
+    for line in f.read():
         if line[0] == '0':
             sys.stdout.write(' ')
         else:
