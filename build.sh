@@ -18,8 +18,7 @@ make clean -C compiler
 make -C compiler
 
 
-cp simu.sh $BIN/simu
-cp -r simu/ $BIN/_simu
+cp simu/simu $BIN/simu
 mv compiler/min-caml $BIN
 cp mcamlc $BIN
 cp asm.sh $BIN/asm
