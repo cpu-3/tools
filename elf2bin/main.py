@@ -11,8 +11,12 @@ binary = lief.parse(filename)
 
 sections = ['.reset.boot', '.text', '.rodata']
 
-with open(output, 'w') as f:
+pad = 0
+with open(output, 'wb') as f:
     for name in sections:
         section = binary.get_section(name)
-        data = ''.join(map(chr, section.content))
+        data = bytes(section.content)
         f.write(data)
+        pad = (pad + section.size) % 4
+
+    f.write(b'\x00' * (4 - pad))
