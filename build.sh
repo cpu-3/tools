@@ -1,5 +1,4 @@
 #!/bin/sh
-
 set -eu
 
 git submodule update --init --recursive
@@ -11,17 +10,25 @@ mkdir -p $BIN
 mkdir -p $BIN/asm-lib
 mkdir -p $BIN/compiler
 mkdir -p $BIN/_simu
+mkdir -p $BIN/elf2bin-lib
 
+make clean -C simu
 make -C simu
+make clean -C compiler
 make -C compiler
+
 
 cp simu.sh $BIN/simu
 cp -r simu/ $BIN/_simu
 mv compiler/min-caml $BIN
 cp mcamlc $BIN
 cp asm.sh $BIN/asm
+cp elf2bin.sh $BIN/elf2bin
 cp -r compiler $BIN/compiler
 cp -r asm $BIN/asm-lib
+
+cp -r elf2bin $BIN/elf2bin-lib
+make build -C $BIN/elf2bin-lib/elf2bin
 
 
 echo "\n\nInstal succeeded."
