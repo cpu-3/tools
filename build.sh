@@ -22,12 +22,12 @@ cp simu/simu $BIN/simu
 mv compiler/min-caml $BIN
 cp mcamlc $BIN
 cp asm.sh $BIN/asm
-cp elf2bin.sh $BIN/elf2bin
 cp -r compiler $BIN/compiler
 cp -r asm $BIN/asm-lib
 
 cp -r elf2bin $BIN/elf2bin-lib
 make build -C $BIN/elf2bin-lib/elf2bin
+cp $BIN/elf2bin-lib/elf2bin/main.py $BIN/elf2bin
 
 
 echo "\n\nInstal succeeded."
