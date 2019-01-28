@@ -1,3 +1,3 @@
 
-build: Pipfile
-	pipenv install
+build: Pipfile.lock
+	pipenv install --system
