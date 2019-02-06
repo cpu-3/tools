@@ -7,3 +7,6 @@
 [submodule "simu"]
 	path = simu
 	url = git@github.com:cpu-3/simu.git
+[submodule "emu"]
+	path = emu
+	url = git@github.com:cpu-3/emu.git
