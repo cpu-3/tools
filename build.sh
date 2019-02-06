@@ -13,11 +13,9 @@ mkdir -p $BIN/_simu
 mkdir -p $BIN/elf2bin-lib
 mkdir -p $BIN/_emu
 
-make clean -C simu
 make -C simu
 make clean -C compiler
 make -C compiler
-make clean -C emu
 make -C emu
 
 
