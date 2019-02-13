@@ -10,7 +10,7 @@ output = sys.argv[2]
 
 binary = lief.parse(filename)
 
-sections = ['.reset.boot', '.text', '.rodata']
+sections = ['.reset.boot', '.text', '.rodata', '.programs']
 
 pad = 0
 num_wrote = 0
