@@ -21,7 +21,7 @@ def main():
             u = 4 * (i + 1)
             s = struct.unpack('>I', bs[l:u])[0]
             f.write(hex(s)[2:])
-            f.write(';\n')
+            f.write(',\n')
 
 
 if __name__ == '__main__':
