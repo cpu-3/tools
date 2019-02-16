@@ -14,13 +14,20 @@ sections = ['.reset.boot', '.text', '.rodata', '.programs']
 
 pad = 0
 num_wrote = 0
+first_elem = True
 with open(output, 'wb') as f:
     for name in sections:
-        section = binary.get_section(name)
+        try:
+            section = binary.get_section(name)
+        except Exception:
+            continue
         data = bytes(section.content)
 
         zero_pad_size = section.virtual_address - num_wrote
-        f.write(b'\x00' * zero_pad_size)
+        if not first_elem:
+            f.write(b'\x00' * zero_pad_size)
+        else:
+            first_elem = False
         num_wrote += zero_pad_size
         f.write(data)
         pad = (pad + section.size) % 4
