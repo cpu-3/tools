@@ -1,8 +1,5 @@
 set -eu
 
-git submodule update --init --recursive
-git submodule foreach git pull origin master
-
 echo -n "installing emu..."
 
 CUR=`pwd`
