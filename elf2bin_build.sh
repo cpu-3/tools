@@ -2,6 +2,7 @@ set -eu
 
 echo "installing elf2bin..."
 
+git submodule foreach git pull origin master
 CUR=`pwd`
 BIN=$CUR/bin
 mkdir -p $BIN/elf2bin-lib
