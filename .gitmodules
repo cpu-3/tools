@@ -1,12 +1,12 @@
-[submodule "asm"]
-	path = asm
-	url = https://github.com/cpu-3/asm
-[submodule "compiler"]
-	path = compiler
-	url = https://github.com/cpu-3/compiler
 [submodule "simu"]
 	path = simu
 	url = https://github.com/cpu-3/simu
 [submodule "emu"]
 	path = emu
 	url = https://github.com/cpu-3/emu
+[submodule "compiler"]
+	path = compiler
+	url = https://github.com/cpu-3/compiler
+[submodule "asm"]
+	path = asm
+	url = https://github.com/cpu-3/asm
