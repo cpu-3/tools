@@ -30,7 +30,6 @@ with open(output, 'wb') as f:
             first_elem = False
         num_wrote += zero_pad_size
         f.write(data)
-        pad = (pad + section.size) % 4
         num_wrote += section.size
 
-    f.write(b'\x00' * (4 - pad))
+    f.write(b'\x00' * (4 - (num_wrote % 4)))
